@@ -21,10 +21,19 @@ import java.net.URLConnection;
  * Created by Antoine on 04/02/2015.
  */
 public class Controller extends AsyncTask<String, Void, String> {
+
     private static final String weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=city,country#sthash.Q7DzQboM.dpuf";
     private InputStream in;
-private  int responseCode;
+    private  int responseCode;
+
+    @Override
     protected void onPreExecute() {
+            
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
     }
 
     @Override
