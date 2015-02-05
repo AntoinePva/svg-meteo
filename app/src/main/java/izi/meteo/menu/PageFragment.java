@@ -42,17 +42,9 @@ public class PageFragment extends Fragment {
         switch (mPage) {
             case 1:
 
-<<<<<<< HEAD
-                return viewMeteo;
-            case 2:
-=======
-
-
                 return viewMeteo;
             case 2:
 
-
->>>>>>> origin/Antoine
                 return viewSettings;
             default:
 
