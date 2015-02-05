@@ -1,5 +1,6 @@
 package izi.meteo.Data;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -21,10 +22,16 @@ import java.net.URLConnection;
  * Created by Antoine on 04/02/2015.
  */
 public class DataController extends AsyncTask<Void, Void, Void> {
+    private Context mContext;
+
+    public DataController(Context context) {
+        mContext = context;
+    }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
     }
 
     @Override
