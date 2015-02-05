@@ -3,13 +3,11 @@ package izi.meteo.menu;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import izi.meteo.Data.Controller;
 import izi.meteo.R;
 
 /**
@@ -42,12 +40,11 @@ public class PageFragment extends Fragment {
         switch (mPage) {
             case 1:
 
-                new Controller().execute();
+
 
                 return viewMeteo;
             case 2:
-                TextView tvTitle = (TextView) viewSettings.findViewById(R.id.tvTitle);
-                tvTitle.setText("Fragment #" + mPage);
+
 
                 return viewSettings;
             default:
