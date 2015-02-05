@@ -21,12 +21,9 @@
         android:textSize="25sp"/>
     <ProgressBar
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <ImageView
-        android:id="@+id/loader"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ic_loader"/>
+       android:layout_centerInParent="true"
+        android:indeterminate="true"/>
+
 
 </RelativeLayout>
