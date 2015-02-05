@@ -3,13 +3,11 @@ package izi.meteo.menu;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import izi.meteo.Data.Controller;
 import izi.meteo.R;
 
 /**
@@ -19,6 +17,7 @@ public class PageFragment extends Fragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
+
     public static PageFragment newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
@@ -37,18 +36,23 @@ public class PageFragment extends Fragment {
     // Set the associated text for the title
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        create view to display weather
         View viewMeteo = inflater.inflate(R.layout.fragment_meteo, container, false);
-        View viewSettings = inflater.inflate(R.layout.fragment_settings, container, false);
+        View viewSettings = inflater.inflate(R.layout.fragment_favoris, container, false);
         switch (mPage) {
             case 1:
 
-                new Controller().execute();
+<<<<<<< HEAD
+                return viewMeteo;
+            case 2:
+=======
+
 
                 return viewMeteo;
             case 2:
-                TextView tvTitle = (TextView) viewSettings.findViewById(R.id.tvTitle);
-                tvTitle.setText("Fragment #" + mPage);
 
+
+>>>>>>> origin/Antoine
                 return viewSettings;
             default:
 

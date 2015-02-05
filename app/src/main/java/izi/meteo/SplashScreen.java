@@ -1,8 +1,6 @@
 package izi.meteo;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,8 +12,8 @@ public class SplashScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        Intent intent = new Intent(this, DisplayWeather.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, DisplayWeather.class);
+//        startActivity(intent);
     }
 
 
