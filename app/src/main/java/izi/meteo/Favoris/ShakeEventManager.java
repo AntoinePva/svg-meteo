@@ -15,3 +15,5 @@ public void init(Context ctx) {
 public void register() {
         sManager.registerListener(this, s, SensorManager.SENSOR_DELAY_NORMAL);
 }
+
+//http://www.javacodegeeks.com/2014/04/android-shake-to-refresh-tutorial.html
