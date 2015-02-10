@@ -1,14 +1,23 @@
 package izi.meteo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
-import izi.meteo.Utils.ExternalData;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import izi.meteo.Utils.ConnexionManager;
 
 
 public class SplashScreen extends Activity {
+    ConnexionManager mCoManager;
+    @InjectView(R.id.error)
+    LinearLayout ll_Error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +25,10 @@ public class SplashScreen extends Activity {
         setContentView(R.layout.activity_splash_screen);
 //        Intent intent = new Intent(this, DisplayWeather.class);
 //        startActivity(intent);
-        ExternalData.checkDataNetwork(this);
-       if( ExternalData.checkLocation(this)) ExternalData.getLocation(this);
+        mCoManager = ConnexionManager.getInstance();
+        ButterKnife.inject(this);
+        init(findViewById(R.id.activity_splash_screen));
+
     }
 
 
@@ -40,5 +51,18 @@ public class SplashScreen extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void init(View v) {
+        String currentLocation = mCoManager.getLocation(this);
+        if (currentLocation != null && mCoManager.checkDataNetwork(this)) {
+            ConnexionManager.CURRENT_TOWN = currentLocation;
+
+            Intent intent = new Intent(this, DisplayWeather.class);
+            startActivity(intent);
+        } else {
+            ll_Error.setVisibility(View.VISIBLE);
+            Log.e("cl+mCo",currentLocation+"||||||||||||"+mCoManager.checkDataNetwork(this));
+        }
+
+    }
 
 }

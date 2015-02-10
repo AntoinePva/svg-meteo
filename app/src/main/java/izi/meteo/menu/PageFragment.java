@@ -8,12 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import izi.meteo.R;
+import izi.meteo.Utils.ConnexionManager;
 
 /**
  * Created by Antoine on 03/02/2015.
  */
 public class PageFragment extends Fragment {
+    @InjectView(R.id.displayCiyInfo)
+    TextView tv_city;
 
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
@@ -30,6 +35,7 @@ public class PageFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(ARG_PAGE);
+
     }
 
     // Inflate the fragment layout we defined above for this fragment
@@ -39,9 +45,11 @@ public class PageFragment extends Fragment {
 //        create view to display weather
         View viewMeteo = inflater.inflate(R.layout.fragment_meteo, container, false);
         View viewSettings = inflater.inflate(R.layout.fragment_favoris, container, false);
+
         switch (mPage) {
             case 1:
-
+                ButterKnife.inject(this,viewMeteo);
+                tv_city.setText(ConnexionManager.CURRENT_TOWN);
                 return viewMeteo;
             case 2:
 

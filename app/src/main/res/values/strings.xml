@@ -2,10 +2,9 @@
 <resources>
 
     <string name="app_name">Meteo</string>
-    <string name="slogan">La météo de là d\'où que t\'es</string>
+    <string name="slogan">La métété...la mété-o</string>
     <string name="search_title">Cherchez une ville</string>
-
-    <!--Data.java-->
-    <string name="noConnexion">Vous n\'avez pas accès au réseau internet,activez les pour accèder à l\'application</string>
+    <string name="retry">Réessayer</string>
+    <string name="noConnexion">Vous devez activer vos données mobiles et votre Gps</string>
 </resources>
 
