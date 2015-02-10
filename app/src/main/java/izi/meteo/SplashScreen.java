@@ -2,11 +2,10 @@ package izi.meteo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import izi.meteo.Utils.Data;
+import izi.meteo.Utils.ExternalData;
 
 
 public class SplashScreen extends Activity {
@@ -17,7 +16,8 @@ public class SplashScreen extends Activity {
         setContentView(R.layout.activity_splash_screen);
 //        Intent intent = new Intent(this, DisplayWeather.class);
 //        startActivity(intent);
-        Data d= new Data(this);
+        ExternalData.checkDataNetwork(this);
+       if( ExternalData.checkLocation(this)) ExternalData.getLocation(this);
     }
 
 
