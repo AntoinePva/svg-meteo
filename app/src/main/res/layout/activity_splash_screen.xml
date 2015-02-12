@@ -10,23 +10,12 @@
     tools:context=".SplashScreen"
     android:background="#4b7a7f">
 
-
-    <TextView
-        android:id="@+id/slogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/slogan"
-        android:drawableTop="@drawable/sun_cloud"
-        android:textColor="#fff"
-        android:fontFamily="sans-serif-light"
-        android:textSize="25sp" />
-
     <LinearLayout
-        android:id="@+id/error"
-        android:layout_width="wrap_content"
+        android:id="@+id/retry"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="#FFF"
         android:visibility="gone"
         android:orientation="vertical">
 
@@ -42,12 +31,27 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/retry"
             android:onClick="init" />
-    </LinearLayout>
-    <!--<ProgressBar-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:indeterminate="true"/>-->
 
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/slogan"
+        android:drawableTop="@drawable/sun_cloud"
+        android:textColor="#fff"
+        android:fontFamily="sans-serif-light"
+        android:textSize="25sp" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_location"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true" />
 
 </RelativeLayout>

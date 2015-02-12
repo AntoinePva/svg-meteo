@@ -16,8 +16,8 @@ import izi.meteo.Utils.ConnexionManager;
 
 public class SplashScreen extends Activity {
     ConnexionManager mCoManager;
-    @InjectView(R.id.error)
-    LinearLayout ll_Error;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class SplashScreen extends Activity {
         setContentView(R.layout.activity_splash_screen);
 //        Intent intent = new Intent(this, DisplayWeather.class);
 //        startActivity(intent);
-        mCoManager = ConnexionManager.getInstance();
         ButterKnife.inject(this);
         init(findViewById(R.id.activity_splash_screen));
 
@@ -51,18 +50,8 @@ public class SplashScreen extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void init(View v) {
-        String currentLocation = mCoManager.getLocation(this);
-        if (currentLocation != null && mCoManager.checkDataNetwork(this)) {
-            ConnexionManager.CURRENT_TOWN = currentLocation;
-
-            Intent intent = new Intent(this, DisplayWeather.class);
-            startActivity(intent);
-        } else {
-            ll_Error.setVisibility(View.VISIBLE);
-            Log.e("cl+mCo",currentLocation+"||||||||||||"+mCoManager.checkDataNetwork(this));
-        }
-
-    }
+ public  void init(View v){
+     new ConnexionManager(this).execute();
+ }
 
 }
