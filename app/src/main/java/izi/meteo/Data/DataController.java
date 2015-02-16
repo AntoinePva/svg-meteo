@@ -1,47 +1,20 @@
 package izi.meteo.Data;
 
-import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.util.ArrayList;
 
 /**
- * Created by Antoine on 04/02/2015.
+ * Created by matthieu on 06/02/2015.
  */
-public class DataController extends AsyncTask<Void, Void, Void> {
+public class DataController {
 
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
+    private DataModel currentLocation;
+    private ArrayList<DataModel> listLocation;
+    private DataAsync syncLocation;
 
-    @Override
 
-    protected Void doInBackground(Void... params) {
-        return null;
-    }
-
-    @Override
-
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
-    }
-
-    @Override
-    protected void onProgressUpdate(Void... values) {
-        super.onProgressUpdate(values);
+    DataModel findLocation(String name){
+        DataModel newModel=new DataModel(name);
+        return newModel;
     }
 
 }
