@@ -10,29 +10,15 @@
     tools:context=".SplashScreen"
     android:background="#4b7a7f">
 
-    <LinearLayout
-        android:id="@+id/retry"
-        android:layout_width="fill_parent"
+
+    <TextView
+        android:id="@+id/noProvider"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="#FFF"
         android:visibility="gone"
-        android:orientation="vertical">
+        android:text="@string/noConnexion" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/noConnexion" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/retry"
-            android:onClick="init" />
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/slogan"

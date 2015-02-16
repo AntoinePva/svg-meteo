@@ -3,14 +3,9 @@ package izi.meteo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import izi.meteo.Utils.ConnexionManager;
 import izi.meteo.menu.SampleFragmentPagerAdapter;
 
 

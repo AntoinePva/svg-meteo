@@ -11,7 +11,7 @@ import android.widget.TextView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import izi.meteo.R;
-import izi.meteo.Utils.ConnexionManager;
+import izi.meteo.SplashScreen;
 
 /**
  * Created by Antoine on 03/02/2015.
@@ -49,7 +49,7 @@ public class PageFragment extends Fragment {
         switch (mPage) {
             case 1:
                 ButterKnife.inject(this,viewMeteo);
-                tv_city.setText(ConnexionManager.CURRENT_TOWN);
+
                 return viewMeteo;
             case 2:
 
